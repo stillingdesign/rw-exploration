@@ -32,10 +32,10 @@ let observerHeight = window.innerHeight - header.offsetHeight;
 function headerDarken() {
     header.classList.remove(`color:ink-3`);
     headerBg.classList.remove(`bg:sheet-3`);
-    headerBg.classList.remove(`shadow:headerLight`);
+    headerBg.classList.remove(`header-shadow-light`);
     header.classList.add(`color:ink-3-i`);
     headerBg.classList.add(`bg:sheet-5-i`);
-    headerBg.classList.add(`shadow:headerDark`);
+    headerBg.classList.add(`header-shadow-dark`);
     headerCtas.forEach(cta => {
         cta.classList.remove(`btn:primary`);
         cta.classList.add(`btn:primary-i`);
@@ -49,10 +49,10 @@ function headerDarken() {
 function headerLighten() {
     header.classList.remove(`color:ink-3-i`);
     headerBg.classList.remove(`bg:sheet-5-i`);
-    headerBg.classList.remove(`shadow:headerDark`);
+    headerBg.classList.remove(`header-shadow-dark`);
     header.classList.add(`color:ink-3`);
     headerBg.classList.add(`bg:sheet-3`);
-    headerBg.classList.add(`shadow:headerLight`);
+    headerBg.classList.add(`header-shadow-light`);
     headerCtas.forEach(cta => {
         cta.classList.remove(`btn:primary-i`);
         cta.classList.add(`btn:primary`);
