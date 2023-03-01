@@ -1,0 +1,311 @@
+{% import "components/_icons.njk" as icons %}
+
+{% macro calendar() %}
+    <div aria-hidden="true" class="relative overflow:hidden flex w:100p h:100p border-t:1 border-l:1 border:edge-1 radius-tl:md bg:sheet-2">
+        {% macro calItem(label, time, color, cancel, decline) %}
+            <div class="block p:6 border-b:1 border:edge-1">
+                <div class="relative flex bg:{{ color }} radius:xs p:1 {% if cancel or decline %}bg-opacity:30{% else %}bg-opacity:70{% endif %}">
+                    <div class="flex ml:4 w:100p bg:sheet-2 bg-opacity:60 radius-r:2xs">
+                        <div class="relative block font:2xs text:left leading:120 pt:6 mb:1 ml:6 pb:4 {% if cancel or decline %}color:ink-1 opacity:60{% endif %}">
+                            <div class="relative flex align-items:center semibold">
+                                <div class="relative block space:nowrap overflow:hidden ellipsis">
+                                    {{ label }}
+                                    {% if cancel %}<div class="absolute top:4 mt:1 left:0 w:100p h:1 bg:ink-1"></div>{% endif %}
+                                </div>
+                                {% if cancel %}
+                                    <div class="ml:2 regular font:3xs">(canceled)</div>
+                                {% elif decline %}
+                                    {{ icons.rewatchIcon('flex-shrink:0 w:10 color:link-rg ml:4 mt:n1')}}
+                                    <div class="ml:2 regular font:3xs">(declined)</div>
+                                {% else %}
+                                    {{ icons.rewatchIcon('w:10 color:link-rg ml:4 mt:n1')}}
+                                {% endif %}
+                            </div>
+                            <div class="font:3xs">
+                                {{ time }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endmacro %}
+        <div class="flex flex:col flex-shrink:0 w:160 sm:w:224 md:w:192 border-r:1 border:edge-1">
+            <div class="font:2xs leading:100 color:ink-1 text:center py:6 border-b:1 border:edge-1">
+                Mon 27
+            </div>
+            {{ calItem(label='Weekly standup', time='10:00 – 11:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Team sync', time='11:00 – 12:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Project kickoff', time='12:00 – 1:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Customer call', time='1:00 – 2:00', color='primary-rg') }}
+            {{ calItem(label='Project status', time='2:00 – 3:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Marketing recap', time='3:00 – 4:00', color='edge-2', cancel=true) }}
+        </div>
+        <div class="flex flex:col flex-shrink:0 w:160 sm:w:224 md:w:160 border-r:1 border:edge-1">
+            <div class="font:2xs leading:100 color:ink-1 text:center py:6 border-b:1 border:edge-1">
+                Tue 28
+            </div>
+            {{ calItem(label='Sprint planning', time='10:00 – 11:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Interview: Sr. AE', time='11:00 – 12:00', color='primary-rg') }}
+            {{ calItem(label='All-hands', time='12:00 – 1:00', color='primary-rg') }}
+            {{ calItem(label='Sales report', time='1:00 – 2:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Ops overview', time='2:00 – 3:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Success Bi-weekly', time='3:00 – 4:00', color='edge-2', cancel=true) }}
+        </div>
+        <div class="flex flex:col flex-shrink:0 w:160 sm:w:224 md:w:160 border-r:1 border:edge-1">
+            <div class="font:2xs leading:100 color:ink-1 text:center py:6 border-b:1 border:edge-1">
+                Wed 29
+            </div>
+            {{ calItem(label='Show-n-tell', time='10:00 – 11:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Dept. standup', time='11:00 – 12:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Training', time='12:00 – 1:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Product feedback', time='1:00 – 2:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Retrospective', time='2:00 – 3:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Design review', time='3:00 – 4:00', color='edge-2', cancel=true) }}
+        </div>
+        <div class="flex flex:col flex-shrink:0 w:160 sm:w:224 md:w:160 border-r:1 border:edge-1">
+            <div class="font:2xs leading:100 color:ink-1 text:center py:6 border-b:1 border:edge-1">
+                Thu 30
+            </div>
+            {{ calItem(label='Office hours', time='10:00 – 11:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Week in Review', time='11:00 – 12:00', color='edge-2', cancel=true) }}
+            {{ calItem(label='Focus group', time='12:00 – 1:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label="Lunch n' Learn", time='1:00 – 2:00', color='link-rg-i', decline=true) }}
+            {{ calItem(label='Team hang', time='2:00 – 3:00', color='primary-rg') }}
+            {{ calItem(label='Sales call', time='3:00 – 4:00', color='primary-rg') }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro calendarItemMdI(ariaHidden, width, classes, meetingTitle, meetingTime, app) %}
+    <div aria-hidden="{{ ariaHidden }}" class="relative flex-shrink:0 flex w:{{ width }} h:56 bg:white font:sm color:ink-1 leading:130 bg-opacity:2 border:1 border:white border-opacity:4 backdrop backdrop-blur:md blur:fix radius:sm overflow:hidden {{ classes }}">
+        <div class="relative w:4 h:100p bg:white opacity:4 flex-shrink:0"></div>
+        <div class="flex flex:col px:12 py:10">
+            <div class="flex align-items:center gap:6 semibold space:nowrap ellipsis">
+                <div class="opacity:40">
+                    {{ meetingTitle | safe }}
+                </div>
+                {{ app }}
+            </div>
+            <div class="font:xs space:nowrap ellipsis opacity:20">
+                {{ meetingTime | safe }}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro uiNavItem(active, icon, label, notification, theme, activate) %}
+    <div class="flex align-items:center justify-content:between py:4 pl:4 ml:n1 sm:ml:0 sm:pl:8 pr:4 radius:sm border:1 {% if (activate == label) and (theme == 'dark') %}bg:sheet-3-i border:white border-opacity:4{% elif (activate == label) and (theme == 'light') %}bg:sheet-3 border:black border-opacity:10{% endif %}">
+        <div class="flex-shrink:0 flex align-items:center gap:8 {% if activate != label %}opacity:50{% endif %}">
+            {{ icon }}
+            <div class="hidden sm:block">
+                {{ label | capitalize }}
+            </div>
+        </div>
+        <div class="hidden sm:flex align-items:center justify-content:center w:20 h:20 border:1 radius:xs font:2xs text:center {% if notification and (theme == 'dark') %}color:link-rg-i bg:sheet-2-i border:white border-opacity:2{% elif notification and (theme == 'light') %}color:link-rg bg:sheet-2 border:black border-opacity:8{% else %}opacity:0{% endif %}">
+            {{ notification }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro uiSeriesCard(label, time, image, new, theme) %}
+    <div class="flex-shrink:0 flex align-items:center gap:12">
+        <div class="flex flex:col align-items:center">
+            <img src="/marketing-assets/images/{{ image }}" width="48" height="72" class="relative z:1 radius:sm overflow:hidden" alt="">
+            <div class="w:40 h:2 mt:2 radius-b:full {% if theme == 'dark' %}bg:sheet-1-i{% else %}bg:sheet-1{% endif %}"></div>
+            <div class="w:32 h:2 mt:2 radius-b:full {% if theme == 'dark' %}bg:sheet-1-i{% else %}bg:sheet-1{% endif %}"></div>
+        </div>
+        <div class="flex flex:col leading:140 pb:8">
+            <div class="flex align-items:center gap:6">
+                <div class="font:sm semibold">
+                    {{ label }}
+                </div>
+                {% if new %}
+                    <div class="font:2xs bg:primary-rg radius:xs px:4 semibold transform translate-y:n2 color:white">
+                        New
+                    </div>
+                {% endif %}
+            </div>
+            <div class="font:xs color:ink-1-i">
+                Updated {{ time }} ago
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro uiTagCard(label, items, theme) %}
+    <div class="flex-shrink:0 flex align-items:center gap:8">
+        <div class="w:28 h:28 radius:full flex justify-content:center align-items:center font:xs semibold border:1 {% if theme == 'dark' %}bg:sheet-1-i border:edge-1-i{% else %}bg:sheet-1 border:edge-1{% endif %}">#</div>
+        <div class="mt:n2 block leading:130">
+            <div class="font:xs semibold">
+                {{ label }}
+            </div>
+            <div class="font:2xs opacity:70">
+                {{ items }} shared items
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro uiVideoCard(label, date, image, time, highlight, theme) %}
+    <div class="relative flex-shrink:0 block w:192 leading:130">
+        <div class="relative z:1 overflow:hidden w:100p flex ratio:16-9 radius:sm overflow:hidden border:2 border:black bg:black font:3xs semibold ">
+            <img src="/marketing-assets/images/{{ image }}" width="192" height="108" alt="" class="w:100p h:auto">
+            {% if highlight %}
+                <div class="absolute bottom:2 left:2 flex align-items:center bg:ui-green color:black pl:2 pr:4 radius:xs">
+                    {{ icons.playCircle('w:10')}}
+                    Highlights
+                </div>
+            {% endif %}
+            <div class="absolute bottom:2 right:2 bg:black bg-opacity:80 backdrop backdrop-blur:sm blur:fix color:white pl:2 pr:4 radius:xs">
+                {{ time }}
+            </div>
+        </div>
+        <div class="flex align-items:center justify-content:between w:100p">
+            <div>
+                <div class="font:xs semibold mt:4">
+                    {{ label }}
+                </div>
+                <div class="font:2xs opacity:70">
+                    {{ date }}
+                </div>
+            </div>
+            <div class="w:20 h:20 radius:full bg:sheet-1-i"></div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro home(theme) %}
+    <div class="flex-shrink:0 block w:100p h:48 md:h:96 bg:link-gradient-h"></div>
+    <div class="block w:100p h:100p overflow:hidden px:16 sm:px:24 lg:px:48 mt:n32">
+        <div class="flex align-items:center justify-content:center w:48 h:48 sm:w:64 sm:h:64 radius:md border:2 shadow:md bg:primary-rg {% if theme == 'dark' %}border:black{% else %}border:white{% endif %}">
+            {{ icons.genericLogo('w:24 color:white')}}
+        </div>
+        <div class="semibold font:xl mt:8">
+            Acme's Channel
+        </div>
+        <div class="font:xs md:font:md mt:n4 color:ink-2-i">
+            Where Acme stays informed <span class="hidden sm:inline space:nowrap">and up-to-date 👇</span>
+        </div>
+        <!-- Series -->
+        <div class="mt:24 md:mt:32 relative w:100p flex align-items:start justify-content:start w:100p gap:32 md:gap:48">
+            {{ uiSeriesCard( theme=theme, image="series-thumb-1.webp", label="Highlights", time="5mins", new=true )}}
+            {{ uiSeriesCard( theme=theme, image="series-thumb-2.webp", label="Status Updates", time="30mins" )}}
+            {{ uiSeriesCard( theme=theme, image="series-thumb-3.webp", label="Product Demos", time="1hr" )}}
+            {{ uiSeriesCard( theme=theme, image="series-thumb-4.webp", label="Leadership", time="3hr" )}}
+            {{ uiSeriesCard( theme=theme, image="series-thumb-5.webp", label="Weekends", time="5hr" )}}
+        </div>
+        <!-- Top Tags -->
+        <div class="mt:24 md:mt:32 block w:100p">
+            <div class="flex align-items:center gap:10">
+                <div class="semibold">
+                    Top tags
+                </div>
+                <div class="flex align-items:center gap:2 font:xs color:link-rg-i">
+                    View all
+                    {{ icons.chevRight('w:12')}}
+                </div>
+            </div>
+            <div class="mt:8 sm:mt:12 md:mt:16 flex align-items:start gap:24 sm:gap:32 sm:gap:48">
+                {{ uiTagCard( theme=theme, label='salescall', items='484' )}}
+                {{ uiTagCard( theme=theme, label='roadmap', items='360' )}}
+                {{ uiTagCard( theme=theme, label='productdemo', items='288' )}}
+                {{ uiTagCard( theme=theme, label='companyupdate', items='224' )}}
+                {{ uiTagCard( theme=theme, label='leadership', items='192' )}}
+            </div>
+        </div>
+        <!-- Collection #1 -->
+        <div class="relative mt:24 md:mt:32 block w:100p">
+            <div class="flex align-items:center gap:10">
+                <div class="semibold">
+                    All-hands
+                </div>
+                <div class="flex align-items:center gap:2 font:xs color:link-rg-i">
+                    View all
+                    {{ icons.chevRight('w:12')}}
+                </div>
+            </div>
+            <div class="relative mt:12 md:mt:16 flex align-items:start gap:24 sm:gap:32 lg:gap:48">
+                {{ uiVideoCard( theme=theme, image="video-thumb-1.webp", time="35:16", label="All-hands: Q1 Kickoff", date="January 15, 2023", highlight=true)}}
+                {{ uiVideoCard( theme=theme, image="video-thumb-2.webp", time="27:35", label="All-hands: Year in Review", date="January 5, 2023", highlight=true )}}
+                {{ uiVideoCard( theme=theme, image="video-thumb-3.webp", time="45:12", label="All-hands: Acme Vision", date="December 20, 2022" )}}
+                {{ uiVideoCard( theme=theme, image="video-thumb-4.webp", time="38:48", label="All-hands: Ending Strong", date="December 7, 2022" )}}
+            </div>
+        </div>
+        <!-- Collection #2 -->
+        <div class="relative mt:28 md:mt:36 block w:100p">
+            <div class="flex align-items:center gap:10">
+                <div class="semibold">
+                    Sales calls
+                </div>
+                <div class="flex align-items:center gap:2 font:xs color:link-rg-i">
+                    View all
+                    {{ icons.chevRight('w:12')}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro app(classes, theme, screen, activate) %}
+    <div class="relative z:1 flex w:100p h:100p shadow:2xl {{ classes }} {% if theme == 'dark' %}border:edge-2-i color:ink-3-i bg:sheet-4-i{% else %}border:edge-2 color:ink-3 bg:sheet-4{% endif %}">
+        <!-- Nav Bar -->
+        <div class="relative flex-shrink:0 flex flex:col gap:2 w:40 sm:w:160 md:w:192 h:100p radius-l:lg font:xs semibold leading:100 py:8 px:8">
+            <div class="flex align-items:center justify-content:between pt:6 pb:8 pl:0 sm:pl:6 pr:4 radius:sm border:1 regular mb:1">
+                <div class="flex align-items:center gap:6">
+                    <img src="/marketing-assets/images/avatar-mike.webp" width="20" height="20" alt="Profile image of man with flanel shirt" class="flex-shrink:0 block  ml:2 mt:n1 sm:ml:0 sm:mt:0 relative z:1 radius:full w:20 h:20">
+                    <div class="hidden sm:block opacity:70">
+                        Mike Stilling
+                    </div>
+                </div>
+                <div class="hidden sm:flex align-items:center justify-content:center w:20 h:20 border:1 radius:xs">
+                    {{ icons.chevDown('w:14 opacity:70')}}
+                </div>
+            </div>
+            {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.home('w:16'), label='home' )}}
+            {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.series('w:16'), label='series' )}}
+            {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.collections('w:16'), label='collections' )}}
+            <div class="flex flex:col gap:2">
+                <div class="hidden sm:block pl:12 mt:20 mb:6 font:2xs uppercase opacity:50 tracking:looser">
+                    My stuff
+                </div>
+                {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.library('w:16'), label='library' )}}
+                {{ uiNavItem( activate=activate, theme=theme, notification='16', icon=icons.notification('w:16'), label='notifications' )}}
+                {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.calendar('w:16'), label='meetings' )}}
+                {{ uiNavItem( activate=activate, theme=theme, notification='8', icon=icons.queue('w:16'), label='queue' )}}
+            </div>
+            <div class="hidden md:flex flex:col gap:2">
+                <div class="pl:12 mt:20 mb:6 font:2xs uppercase opacity:50 tracking:looser">
+                    Favorites
+                </div>
+                {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.favorites('w:16 transform'), label='all-hands' )}}
+                {{ uiNavItem( activate=activate, theme=theme, notification=false, icon=icons.favorites('w:16 transform'), label='sales calls' )}}
+            </div>
+            <div class="mt:20 hidden sm:flex align-items:center justify-content:center py:6 pl:8 pr:4 radius:sm border:1 bg:primary-rg border:primary-hv color:white mx:8">
+                Add video
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="relative block w:100p radius-r:lg overflow:hidden">
+            <!-- Search bar -->
+            <div class="relative flex align-items:center justify-content:between w:100p py:8 font:xs">
+                <div class="flex align-items:center justify-content:start gap:6 py:4 px:8 radius:sm border:1 regular mb:1 w:100p max-w:160 sm:max-w:288 {% if theme == 'dark' %}bg:sheet-3-i border:white border-opacity:6{% else %}bg:sheet-3 border:black border-opacity:10{% endif %}">
+                    {{ icons.search('w:16 opacity:70') }}
+                    <div class="opacity:70">
+                        Search <span>for anything</span>...
+                    </div>
+                </div>
+                <div class="flex align-items:center justify-content:end gap:6 opacity:50 pr:16">
+                    <div>
+                        Download
+                    </div>
+                    {{ icons.chevDown('w:14') }}
+                </div>
+            </div>
+            <!-- Page Contents -->
+            <div class="relative z:1 block w:100p h:100p radius-tl:md border-l:1 border-t:1 overflow:hidden {% if theme == 'dark' %}border:edge-2-i bg:sheet-3-i{% else %}border:edge-2 color:ink-3 bg:sheet-3{% endif %}">
+                {{ screen | safe }}
+            </div>
+            <div class="z:2 absolute bottom:0 left:0 w:100p h:448 opacity:60 {% if theme == 'dark' %}bg:fade-down-i{% else %}bg:fade-down{% endif %}"></div>
+        </div>
+    </div>
+{% endmacro %}

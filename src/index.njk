@@ -1,0 +1,364 @@
+---
+layout: "main.njk"
+seoTitle: "Rewatch - The Async Video Platform"
+seoDesc: "Get more from your video. Rewatch lets you securely save, manage, and search all your video content so teams collaborate faster and work just gets better."
+ogTitle: "Rewatch"
+ogDesc: "Get more from your video. Rewatch lets you securely save, manage, and search all your video content so teams collaborate faster and work just gets better."
+ogImage: "{{- base.url -}}/marketing-assets/images/og/default.jpg"
+ogImageAlt: "Get more from your video"
+changefreq: daily
+---
+{% import "components/_icons.njk" as icons %}
+{% import "components/_graphics.njk" as graphics %}
+
+<main class="relative w:100p">
+
+    <!-- Dark Region -->
+    <div class="relative block w:100p max-w:100p overflow:hidden bg:sheet-5-i color:ink-3-i z:1">
+
+        <!-- Grid -->
+        <div class="absolute top:0 left:0 w:100p h:100p flex align-items:start justify-content:center z:n1">
+            <div class="relative w:100p h:100p max-w:1152 flex justify-content:between opacity:6" style="max-width: 78rem;">
+                <div class="relative px:12 sm:px:24 h:100p"><div class="w:0 h:100p border-l:1 border:white border:dashed"></div></div>
+                <div class="relative px:12 sm:px:24 h:100p"><div class="w:0 h:100p border-l:1 border:white border:dashed hidden sm:block"></div></div>
+                <div class="relative px:12 sm:px:24 h:100p"><div class="w:0 h:100p border-l:1 border:white border:dashed hidden sm:block"></div></div>
+                <div class="relative px:12 sm:px:24 h:100p"><div class="w:0 h:100p border-l:1 border:white border:dashed hidden sm:block"></div></div>
+                <div class="relative px:12 sm:px:24 h:100p"><div class="w:0 h:100p border-l:1 border:white border:dashed"></div></div>
+            </div>
+        </div>
+
+        <!-- Hero Text -->
+        <section data-section="dark" class="section pt:128 sm:pt:192 md:pt:224 z:3 bg:radial-in-down-sheet-2-i">
+            <div class="container flex flex:col align-items:center gap:128">
+                <div class="relative flex flex:col align-items:center text:center gap:12 max-w:512 sm:max-w:768">
+                    <h1 class="headline font:8xl sm:font:10xl md:font:11xl lg:font:11xl">
+                        The simple, <span class="space:nowrap highlight:headline-dark">all-in-one</span> async video platform
+                    </h1>
+                    <p class="font:lg color:ink-2-i sm:max-w:512 md:max-w:none">
+                        Want to move faster without endless distracting meetings? Rewatch is the flexible asynchronous video platform that <span class="space:nowrap">frees your</span> team up to do their <span class="space:nowrap">very best work.</span>
+                    </p>
+                    <div class="relative flex align-items:center gap:16 mt:12">
+                        <a href="#" class="relative btn btn:md btn:primary-i">
+                            Get a demo
+                        </a>
+                        <a href="#" class="btn btn:md btn:sheet-2-i">
+                            Product Overview 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Graphic -->
+        <section data-section="dark" class="section section:row section:py z:2">
+            <!-- Meetings Left -->
+            <div aria-hidden="true" class="relative z:0 w:100p max-w:384 ml:n48 hidden lg:flex flex:col justify-content:center align-items:start gap:48 pointer-events:none overflow:hidden">
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="8:00 - 9:00", meetingTitle="All-hands", app=icons.iconZoom('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="9:00 - 10:00", meetingTitle="Sales call", app=icons.iconSalesforce('w:18 mt:n2 mb:n2 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p" style="transform: translateX(-96px);">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="10:00 - 11:00", meetingTitle="Heads down")}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="11:00 - 12:00", meetingTitle="Write feature demo", app=icons.iconNotion('w:14 opacity:40 flex-shrink:0'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="1:00 - 2:00", meetingTitle="Weekly sync", app=icons.iconTeams('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="2:00 - 3:00", meetingTitle="Customer call: Testly", app=icons.iconZoom('w:14 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p" style="transform: translateX(-128px);">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="3:00 - 4:00", meetingTitle="Team hang")}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="4:00 - 5:00", meetingTitle="Add design feedback", app=icons.iconJira('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="8:00 - 9:00", meetingTitle="Status update")}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="10:00 - 11:00", meetingTitle="Interview: Jen Jones", app=icons.iconMeet('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="11:00 - 12:00", meetingTitle="Weekly stats", app=icons.iconSlack('w:14 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="hidden sm:block absolute top:0 left:0 w:96 h:100p bg:fade-left-i"></div>
+                <div class="hidden sm:block absolute top:0 right:0 w:24 h:100p bg:fade-right-i"></div>
+            </div>
+            <!-- UI -->
+            <div aria-hidden="true" class="container:no-pad z:2 flex-shrink:0 flex align-items:center justify-content:center pointer-events:none pl:24 sm:pl:0">
+                <div class="relative z:1 w:100p flex ratio:unset lg:ratio:16-9 sm:max-w:none h:512 sm:h:640 md:h:640 lg:h:auto">
+                    <!-- Glow -->
+                    <div class="absolute z:n1 top:0 left:0 w:100p h:100p radius:lg bg:primary-rg filter filter-blur:2xl blur:fix opacity:20"></div>
+                    <!-- Product UI -->
+                    {{ graphics.app(
+                        classes='radius-tl:lg radius-bl:lg sm:radius-br:lg sm:radius-tr:lg border-t:1 sm:border-r:1 border-b:1 border-l:1',
+                        theme='dark',
+                        activate='home',
+                        screen=graphics.home(theme='dark')
+                    ) }}
+                </div>
+            </div>
+            <!-- Meetings Right-->
+            <div aria-hidden="true" class="relative z:0 w:100p max-w:384 mr:n48 hidden lg:flex flex:col justify-content:center align-items:start gap:48 pointer-events:none overflow:hidden">
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="11:00 - 12:00", meetingTitle="Share webinar", app=icons.iconHubspot('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="12:00 - 1:00", meetingTitle="Project kickoff", app=icons.iconMeet('w:14 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p" style="transform: translateX(-96px);">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="1:00 - 2:00", meetingTitle="Meeting")}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="9:00 - 10:00", meetingTitle="Upload videos", app=icons.iconZapier('w:36 color:ink-2-i opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="10:00 - 11:00", meetingTitle="EOW recap", app=icons.iconZoom('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="11:00 - 12:00", meetingTitle="Acme / Bestly", app=icons.iconTeams('w:14 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p" style="transform: translateX(-144px);">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="12:00 - 1:00", meetingTitle="Weekend update", app=icons.iconSlack('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="1:00 - 2:00", meetingTitle="Q1 Vision", app=icons.iconNotion('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="2:00 - 3:00", meetingTitle="John / Jane ☕️", app=icons.iconZoom('w:14 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="flex w:100p align-items:start justify-content:start gap:48">
+                    <div class="flex-shrink:0 flex align-items:center gap:48 w:100p">
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="3:00 - 4:00", meetingTitle="Board meeting", app=icons.iconTeams('w:14 opacity:40'))}}
+                        {{ graphics.calendarItemMdI(ariaHidden="true", classes="", width="192", meetingTime="4:00 - 5:00", meetingTitle="Sales report", app=icons.iconSalesforce('w:18 mt:n2 mb:n2 opacity:40'))}}
+                    </div>
+                </div>
+                <div class="hidden sm:block absolute top:0 right:0 w:96 h:100p bg:fade-right-i"></div>
+                <div class="hidden sm:block absolute top:0 left:0 w:24 h:100p bg:fade-left-i"></div>
+            </div>
+        </section>
+
+        <!-- Logo Wall -->
+        <section data-section="dark" data-hero-logowall class="section section:pb z:1">
+            <div class="container flex flex:col">
+                <div class="w:100p flex justify-content:center text:center">
+                    <p class="font:xs semibold uppercase tracking:loosest color:ink-2-i min-h:64 sm:min-h:48">
+                        Industry leaders trust <span class="space:nowrap">Rewatch with their video</span>
+                    </p>
+                </div>
+                {% macro logoWallLogo(icon) %}
+                    <div class="w:50p sm:w:auto min-w:96 flex align-items:stretch justify-content:center h:64 sm:h:80">
+                        {{ icon }}
+                    </div>
+                {% endmacro %}
+                <div class="flex justify-content:between align-items:center flex:wrap sm:flex:nowrap">
+                    {{ logoWallLogo(icon=icons.customerGithub('w:64')) }}
+                    {{ logoWallLogo(icon=icons.customerZendesk('w:96 transform translate-y:n2')) }}
+                    {{ logoWallLogo(icon=icons.customerBrex('w:72')) }}
+                    {{ logoWallLogo(icon=icons.customerMode('w:80')) }}
+                    {{ logoWallLogo(icon=icons.customerEnvoy('w:80')) }}
+                    {{ logoWallLogo(icon=icons.customerKandji('w:80')) }}
+                </div>
+                <div class="flex justify-content:between align-items:center flex:wrap sm:flex:nowrap">
+                    {{ logoWallLogo(icon=icons.customerVercel('w:80')) }}
+                    {{ logoWallLogo(icon=icons.customerAngellist('w:96')) }}
+                    {{ logoWallLogo(icon=icons.customerLinear('w:80')) }}
+                    {{ logoWallLogo(icon=icons.customerSentry('w:96')) }}
+                    {{ logoWallLogo(icon=icons.customerBranch('w:96')) }}
+                    {{ logoWallLogo(icon=icons.customerStedi('w:56')) }}
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pillars -->
+    <section data-section="light" class="section section:py bg:sheet-5 color:ink-3 z:1 overflow:hidden">
+        <div class="absolute top:0 left:0 w:100p h:100p bg:radial-in-down-sheet-2"></div>
+        <!-- Content -->
+        <div class="container flex flex:col sm:grid:normal grid-cols:12 gap:48">
+            <!-- Headline -->
+            <div class="relative z:3 col-start:1 col-end:13 lg:col-end:9 flex sm:mb:24 md:mb:0">
+                <div class="hidden sm:block relative px:24 h:100p sm:ml:n48 py:8 opacity:20"><div class="w:0 h:100p border-l:1 border:black border:dashed"></div><div class="absolute bottom:0 w:1 h:100p bg:fade-down"></div></div>
+                <div class="flex flex:col gap:24 align-items:start">
+                    <div class="flex align-items:center gap:8 sm:ml:n40">
+                        <div class="z:1 ml:n1 w:32 h:32 bg:sheet-3 radius:full flex align-items:center justify-content:center shadow:md mt:n1">
+                            {{ icons.play('w:12 mt:1 mr:n2')}}
+                        </div>
+                        <p class="flex align-items:center gap:4 color:ink-2">
+                            Less meeting. <span class="semibold highlight color:ink-3">More doing.</span>
+                        </p>
+                    </div>
+                    <h2 class="leading:140 tracking:tighter font:2xl sm:font:3xl color:ink-1 max-w:736 lg:max-w:none">
+                        <span class="color:ink-3">Your team’s video knowledge in one place.</span> <span class="faded"><span class="space:nowrap">With Rewatch,</span> teams become less-distracted, more collaborative, and get more done – without <span class="space:nowrap">endless meetings.</span></span>
+                    </h2>
+                </div>
+            </div>
+            <!-- Cards -->
+            {% set cardWrapper = 'relative bg:sheet-3 flex flex:col justify-content:between gap:36 radius:lg border:1 border:edge-1 overflow:hidden text:center' %}
+            {% set cardText = 'flex flex:col align-items:center gap:8 px:24 sm:px:28 pt:36' %}
+            {% set cardTitle = 'leading:120 tracking:tighter font:2xl sm:font:xl semibold' %}
+            {% set cardDesc = 'color:ink-1 font:sm' %}
+            <ul class="relative z:3 col-start:1 col-end:13 flex flex:col sm:grid gap:24 sm:gap:16 grid-cols:2 md:grid-cols:3">
+                <!-- Lil circle dash accent -->
+                <li class="absolute z:n1 top:n320 right:n320 hidden md:flex align-items:center justify-content:center p:48 w:640 h:640 border:1 border:black border-opacity:4 border:dashed radius:full">
+                    <div class="w:100p h:100p flex align-items:center justify-content:center p:48 border:1 border:black border-opacity:6 border:dashed radius:full">
+                        <div class="w:100p h:100p flex align-items:center justify-content:center p:48 border:1 border:black border-opacity:8 border:dashed radius:full">
+                            <div class="w:100p h:100p flex align-items:center justify-content:center p:48 border:1 border:black border-opacity:10 border:dashed radius:full">
+                                <div class="w:100p h:100p flex align-items:center justify-content:center p:48 border:1 border:black border-opacity:15 border:dashed radius:full">
+                                    <div class="w:100p h:100p flex align-items:center justify-content:center p:48 border:1 border:black border-opacity:20 border:dashed radius:full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card 1-->
+                <li class="{{ cardWrapper }} col:2 md:col:1">
+                    <div class="{{ cardText }}">
+                        <h3 class="{{ cardTitle }}">
+                            Reduce meetings, <span class="space:nowrap">improve team focus</span>
+                        </h3>
+                        <p class="{{ cardDesc }} max-w:288 sm:max-w:none md:max-w:288">
+                            Work together across schedules and time zones without the <span class="space:nowrap">wall-to-wall meetings.</span>
+                        </p>
+                    </div>
+                    <!-- Graphic -->
+                    <div aria-hidden="true" class="relative w:100p h:288 pl:28">
+                        {{ graphics.calendar() }}
+                    </div>
+                </li>
+                <!-- Card 2 -->
+                <li class="{{ cardWrapper }}">
+                    <div class="{{ cardText }}">
+                        <h3 class="{{ cardTitle }}">
+                            Connect your team <span class="space:nowrap">to your customers</span>
+                        </h3>
+                        <p class="{{ cardDesc }}">
+                            Foster relationships across your go-to-market <span class="space:nowrap">and product</span> teams with <span class="space:nowrap">deeper connection.</span>
+                        </p>
+                    </div>
+                    <!-- Graphic -->
+                    <div aria-hidden="true" class="relative w:100p h:288 flex justify-content:between">
+                        <div class="relative w:100p h:100p flex flex:col pr:4 pt:4 gap:4 border-t:1 border-r:1 border:edge-1 radius-tr:md bg:sheet-2" style="width: calc(50% - 0.75rem);">
+                            <div class="relative z:1 flex w:100p h:100p bg:primary-hv bg-opacity:30 radius-r:xs overflow:hidden">
+                                <img src="/marketing-assets/images/zoom-avatar-1.webp" width="320" height="180" alt="" class="relative object:cover flex">
+                            </div>
+                            <div class="relative z:1 flex w:100p h:100p bg:primary-rg bg-opacity:30 radius-tr:xs overflow:hidden">
+                                <img src="/marketing-assets/images/zoom-avatar-2.webp" width="320" height="180" alt="" class="relative object:cover flex">
+                            </div>
+                        </div>
+                        <div class="flex-shrink:0 w:0 h:100p flex align-items:center radius:full bg:sheet-1 ml:n24 mr:n24 relative z:2">
+                            <div class="flex-shrink:0 block p:14 bg:sheet-1 ml:n24 radius:full shadow:lg">{{ icons.refresh('w:20 color:link-rg')}}</div>
+                        </div>
+                        <div class="relative h:100p border-t:1 border-l:1 border:edge-1 radius-tl:md bg:sheet-2 text:left" style="width: calc(50% - 0.75rem);">
+                            <div class="font:sm semibold ml:16 mt:8 tracking:tighter">
+                                Customer calls
+                            </div>
+                            {% macro miniVid(imageLeft, imageRight, label) %}
+                                <div class="relative flex-shrink:0 block w:160">
+                                    <div class="relative flex ratio:16-9 w:100p p:2 gap:2 border:1 border:edge-1 radius:sm bg:sheet-2">
+                                        <div class="relative z:1 flex w:100p h:100p bg:primary-rg bg-opacity:30 radius-l:xs overflow:hidden">
+                                            <img src="/marketing-assets/images/{{ imageLeft }}" width="160" height="90" alt="" class="relative object:cover flex">
+                                        </div>
+                                        <div class="relative z:1 flex w:100p h:100p bg:primary-rg bg-opacity:30 radius-r:xs overflow:hidden">
+                                            <img src="/marketing-assets/images/{{ imageRight }}" width="160" height="90" alt="" class="relative object:cover flex">
+                                        </div>
+                                        <div class="absolute z:3 font:3xs leading:120 bottom:4 left:4 flex align-items:center bg:ui-green color:black pl:2 pr:4 py:1 radius:2xs">
+                                            {{ icons.playCircle('flex-shrink:0 w:8')}}
+                                            Highlights
+                                        </div>
+                                    </div>
+                                    <div class="font:xs tracking:tighter semibold">
+                                        {{ label }}
+                                    </div>
+                                </div>
+                            {% endmacro %}
+                            <div class="relative flex flex:col flex-shrink:0 gap:6 ml:16 mt:4">
+                                {{ miniVid(
+                                    imageLeft='zoom-avatar-1.webp',
+                                    imageRight='zoom-avatar-2.webp',
+                                    label='Startly Feedback'
+                                )}}
+                                {{ miniVid(
+                                    imageLeft='zoom-avatar-4.webp',
+                                    imageRight='zoom-avatar-5.webp',
+                                    label='Cando Sales Call'
+                                )}}
+                                {{ miniVid(
+                                    imageLeft='zoom-avatar-3.webp',
+                                    imageRight='zoom-avatar-6.webp',
+                                    label='Techify Sales Call'
+                                )}}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card 3 -->
+                <li class="{{ cardWrapper }}">
+                    <div class="{{ cardText }}">
+                        <h3 class="{{ cardTitle }}">
+                            Supercharge your team <span class="space:nowrap">with perfect recall</span>
+                        </h3>
+                        <p class="{{ cardDesc }}">
+                            Create a shared company brain with one place for people to find the information <span class="space:nowrap">they need.</span>
+                        </p>
+                    </div>
+                    <!-- Graphic -->
+                    <div aria-hidden="true" class="relative flex flex:col align-items:center gap:18 w:100p h:288 pr:28 overflow:hidden">
+                        {% macro collectionBtn(label) %}
+                            <div class="flex flex-shrink:0 align-items:center bg:sheet-2 border:1 border:edge-1 py:8 pl:14 pr:16 gap:4 radius:full font:2xs semibold">
+                                {{ icons.collections('w:16 color:link-rg mt:n2') }}
+                                {{ label }}
+                            </div>
+                        {% endmacro %}
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(0.5rem);">
+                            {{ collectionBtn('Product demos') }}
+                            {{ collectionBtn('All-hands') }}
+                            {{ collectionBtn('Engineering') }}
+                            {{ collectionBtn('Roadmap') }}
+                        </div>
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(-3.5rem);">
+                            {{ collectionBtn('Customer success') }}
+                            {{ collectionBtn('Onboarding') }}
+                            {{ collectionBtn('Sales calls') }}
+                            {{ collectionBtn('Design') }}
+                        </div>
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(-0.5rem);">
+                            {{ collectionBtn('Business updates') }}
+                            {{ collectionBtn('Leadership') }}
+                            {{ collectionBtn('Training') }}
+                            {{ collectionBtn('Growth') }}
+                        </div>
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(-1.75rem);">
+                            {{ collectionBtn('Marketing') }}
+                            {{ collectionBtn('Finance') }}
+                            {{ collectionBtn('Product design') }}
+                            {{ collectionBtn('Demand gen') }}
+                        </div>
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(1rem);">
+                            {{ collectionBtn('User research') }}
+                            {{ collectionBtn('Strategy') }}
+                            {{ collectionBtn('Customer feedback') }}
+                            {{ collectionBtn('Internal comms') }}
+                        </div>
+                        <div class="flex justify-content:start flex-shrink:0 gap:18" style="transform: translateX(-3rem);">
+                            {{ collectionBtn('Feature releases') }}
+                            {{ collectionBtn('Status updates') }}
+                            {{ collectionBtn('Feature requests') }}
+                            {{ collectionBtn('Introductions') }}
+                        </div>
+                        <div class="absolute top:0 right:0 h:100p w:96 bg:fade-right-sheet-4"></div>
+                        <div class="absolute top:0 left:0 h:100p w:96 bg:fade-left-sheet-4"></div>
+                        <div class="absolute top:0 right:0 h:100p w:100p bg:radial-out-down-sheet-4 opacity:80"></div>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </section>
+
+    <section data-section="light" class="section section:py min-h:640"></section>
+
+</main>

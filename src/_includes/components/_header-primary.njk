@@ -1,0 +1,60 @@
+{% import "components/_icons.njk" as icons %}
+
+<header data-header class="fixed top:0 left:0 z:10 w:100p max-w:100p flex align-items:center justify-content:center sm:px:48 py:8 color:ink-3-i blur:fix">
+    <div data-header-bg class="absolute top:0 left:0 w:100p h:100p bg:sheet-5-i bg-opacity:80 backdrop backdrop-blur:sm blur:fix shadow:headerDark transform-center-bottom"></div>
+    <div class="container flex justify-content:between">
+        
+        <!-- Logo -->
+        <div class="relative z:2 flex-shrink:0 flex align-items:center justify-content:start md:w:192">
+            <a href="#" class="btn h:32 pl:8 pr:12 ml:n8 semibold tracking:tight gap:6">
+                {{ icons.rewatchIcon('w:18 flex-shrink:0') }}
+                <div>
+                    Rewatch
+                </div>
+            </a>
+        </div>
+
+        <!-- Mobile -->
+        <div class="flex md:hidden gap:4">
+            <a data-header-cta href="#" class="btn btn:header-cta btn:primary-i">
+                Get a demo
+            </a>
+            <button class="btn flex:col gap:4 radius:full px:6 mr:n6">
+                <div data-header-burger class="w:18 h:1 bg:white"></div>
+                <div data-header-burger class="w:18 h:1 bg:white"></div>
+                <div data-header-burger class="w:18 h:1 bg:white"></div>
+            </button>
+        </div>
+
+        <!-- Menu -->
+        <div class="absolute z:1 top:0 left:0 w:100p h:100p hidden md:flex justify-content:between">
+            <!-- Spacing offset -->
+            <div class="block w:192"></div>
+            <!-- Nav -->
+            <nav class="flex align-items:center gap:4 font:sm">
+                <a href="#" class="btn btn:header-nav">
+                    Use Cases
+                </a>
+                <a href="#" class="btn btn:header-nav">
+                    Resources
+                </a>
+                <a href="#" class="btn btn:header-nav">
+                    Screen Recorder
+                </a>
+                <a href="#" class="btn btn:header-nav">
+                    Pricing
+                </a>
+            </nav>
+            <!-- CTAs -->
+            <div class="flex-shrink:0 flex align-items:center justify-content:end gap:4 w:192">
+                <a href="#" class="btn btn:header-cta opacity:60 hover:opacity:100 transition:200 cubic-out">
+                    Login
+                </a>
+                <a data-header-cta href="#" class="btn btn:header-cta btn:primary-i">
+                    Get a demo
+                </a>
+            </div>
+        </div>
+
+    </div>
+</header>

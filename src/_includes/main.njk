@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- SEO -->
+        <title>{{ seoTitle }}</title>
+        <meta name="description" content="{{- seoDesc -}}">
+    
+        <!-- OpenGraph -->
+        <meta property="og:site_name" content="{{ base.name }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{- ogTitle -}}" />
+        <meta property="og:description" content="{{- ogDesc -}}" />
+        <meta property="og:url" content="{{- base.url -}}{{- page.url -}}" />
+        <meta property="og:image" content="{{- ogImage -}}" />
+        <meta property="og:image:alt" content="{{- ogImageAlt -}}" />
+    
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="{{- base.twitterHandle -}}">
+        <meta name="twitter:title" content="{{- ogTitle -}}">
+        <meta name="twitter:description" content="{{- ogDesc -}}">
+        <meta name="twitter:image" content="{{- ogImage -}}">
+        <meta name="twitter:image:alt" content="{{- ogImageAlt -}}">
+
+        {% if noindex == true %}<meta name="robots" content="noindex,nofollow">{% endif %}
+    
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="{{ '/marketing-assets/css/main.css' | url }}" />
+    
+        <!-- Website Icon -->
+        <link rel="icon" href="{{ '/marketing-assets/images/favicon.svg' | url }}">
+        
+    </head>
+
+    <!-- Body -->
+    <body class="w:100p max-w:100p bg:sheet-5 font:md color:ink-3 tracking:tight leading:160 font:sans kern:normal antialiased">
+
+        {% include "components/_header-primary.njk" %}
+
+        <div id="wrapper">
+            <div id="content">
+
+                <!-- Page Content -->
+                {{ content | safe }}
+
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="/marketing-assets/javascript/main.js"></script>
+    </body>
+
+</html>

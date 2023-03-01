@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "uniform" as *;
+
+.headline { @include apply("leading:110 tracking:tightest"); }
+
+.faded { opacity: 0.85; }
+
+.highlight {
+    background: linear-gradient(0deg, rgba(var(--ui-green), 1) 0%, rgba(var(--ui-green), 1) 100%);
+    background-position: 0% 70%;
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+}
+
+.highlight\:headline-dark {
+    @include apply("relative z:1");
+    &:before {
+        @include apply('absolute z:n1');
+        top: 10%;
+        left: -.125rem;
+        width: calc(100% + 11px);
+        height: 80%;
+        border-radius: 8px;
+        background: linear-gradient(0deg, rgba(var(--ui-green), 0.2) 0%, rgba(var(--ui-green), 0.4) 100%);
+        content: '';
+    }
+    &:after {
+        @include apply('absolute z:n1');
+        top: calc(10% + 1px);
+        left: -.0625rem;
+        width: calc(100% + 9px);
+        height: calc(80% - 2px);
+        border-radius: 7px;
+        background: linear-gradient(0deg, rgba(var(--sheet-4-i), 0.8) 0%, rgba(var(--sheet-4-i), 0.5) 100%);
+        content: '';
+    }
+}
