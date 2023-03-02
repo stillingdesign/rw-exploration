@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "uniform" as *;
 
+/* purgecss start ignore */
+
 .btn { @include apply("flex align-items:center justify-content:center radius:full border:1 leading:100 semibold outline:none"); }
 .btn:focus-visible { @include apply("bg:primary-rg border:primary-rg color:ink-3-i opacity:100")}
 
@@ -16,3 +18,5 @@
 .btn\:primary-i { @include apply("color:ink-3-i bg:primary-rg bg-opacity:20 border:primary-rg border-opacity:50 backdrop backdrop-blur:sm hover:bg-opacity:40 hover:border-opacity:70 transition:200 cubic-out"); transform: translate3d(0, 0, 0); }
 .btn\:sheet-2   { @include apply("color:ink-3   bg:white bg-opacity:40 border:black border-opacity:15 backdrop backdrop-blur:sm hover:bg-opacity:80 hover:border-opacity:20 transition:200 cubic-out"); transform: translate3d(0, 0, 0); }
 .btn\:sheet-2-i { @include apply("color:ink-3-i bg:white bg-opacity:10 border:white border-opacity:10 backdrop backdrop-blur:sm hover:bg-opacity:20 hover:border-opacity:20 transition:200 cubic-out"); transform: translate3d(0, 0, 0); }
+
+/* purgecss end ignore */
